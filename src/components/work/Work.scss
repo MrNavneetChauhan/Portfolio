@@ -1,0 +1,269 @@
+@import "../../globalColor.scss";
+
+.works{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+
+
+
+    h1{
+        position: absolute;
+        top: 30px;
+        // padding: 20px;
+        color:maroon;
+        @include mobile{
+            top:0px;
+
+        }
+    }
+
+    .arrow{
+        font-size: 30px;
+        position: absolute;
+        cursor: pointer;
+
+        
+       @include mobile{
+        display: none;      
+    }
+
+        &.left{
+            left:150px;
+            @include tablet{
+                left:0px;
+            }
+            animation: leftBouncing 1.5s infinite;
+            transition: all 0.5s ease-in-out;
+        }
+
+        @keyframes leftBouncing {
+            0%{
+               margin-left:10px;
+            }
+            100%{
+                margin:0px;
+            }
+        }
+
+        &.right{
+            right: 150px;
+            @include tablet{
+                right:0px;
+            }
+            animation: rightBouncing 1.5s infinite;
+            transition: all 0.5s ease-in-out;
+        }
+
+        @keyframes rightBouncing {
+            0%{
+               margin-right:10px;
+            }
+            100%{
+                margin:0;
+            }
+        }
+    }
+
+    .slider{
+        height: 350px;
+        display: flex;
+        position: absolute;
+        left:0;
+        transition: all 1s ease-out;
+
+        
+       @include mobile{
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center; 
+        gap:15px;     
+    }
+
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item{
+            width:700px;
+            height: 100%;
+            border-radius: 20px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            border:1px solid red;
+
+            @include tablet{
+                width:400px;
+                height:70%;
+            }
+
+            
+       @include mobile{
+     width:70%;
+     height: 190px;
+     margin: 8px 0;   
+    //  border:1px solid black;   
+    }
+
+
+            .left{
+                flex:4;
+                background-color: $mainColor;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+
+
+                .leftContainer{
+                    width:90%;
+                    height: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    color:white;
+
+                    .stacks{
+                        // border:1px solid red;
+                        display: flex;
+                        width:100px;
+                        justify-content: space-between;
+                        img{
+                            width:25px;
+                            height: 25px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    
+                    
+       @include mobile{
+           width: 100%;
+           height: 100%;
+           padding:10px;
+           .stacks{
+               width:80px;
+           }
+     h2{
+         font-size: 15px;
+     }      
+     p{
+         display: none;
+     }
+     span{
+         font-size: 15px;
+     }
+    }
+
+    @include tablet{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        h2{
+            font-size: 15px;
+        }
+
+        p{
+            font-size:13px;
+        }
+    }
+
+                    .imgContainer{
+                        width:40px;
+                        height: 40px;
+                        border-radius:50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+
+                        img{
+                            width:30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            @include mobile{
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                        }
+
+                        h2{
+                            font-size: 20px;
+                        }
+
+                        p{
+                            font-size:13px;
+
+                        }
+
+                        span{
+                            font-size:12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+            }
+
+            .right{
+                flex:8;
+                background-color: rgb(235, 228, 228);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                div{
+                    position: absolute;
+                    // border:1px solid black;
+                    width:60px;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    a{
+                        color:black;
+                    }
+
+                    a:hover{
+                        color:rgba(0, 0, 0, 0.274);
+                    }
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 1;
+                }
+
+                &:hover{
+                    img{
+                        opacity: 0.5;
+                    }
+                    div{
+                        z-index: 2;
+                    }
+                }
+            }
+
+            
+        }
+
+
+    }
+
+    
+}

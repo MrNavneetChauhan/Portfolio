@@ -1,0 +1,19 @@
+@import "../../globalColor.scss";
+.techstacklist{
+    font-size: 18px;
+    margin:10px 50px;
+    padding:7px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    
+    @include mobile{
+     margin-right: 20px;      
+    }
+
+    &.active{
+        background-color: white;
+        color:$mainColor;
+        font-weight: 500;
+    }
+}
